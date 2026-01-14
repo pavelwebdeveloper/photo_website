@@ -1,0 +1,11 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}My Photo App{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'photo_webapp/styles.css' %}">
+    </head>
+    <body>
+        {% block page_content %}{% endblock page_content %}
+    </body>
+</html>

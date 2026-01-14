@@ -8,7 +8,7 @@ def home(request):
     context = {
         "photos": photos
     }
-    return render(request, "home.html", context)
+    return render(request, "photo_webapp/home.html", context)
 
 def photo_detail(request, pk):
     photo = Photo.objects.get(pk=pk)

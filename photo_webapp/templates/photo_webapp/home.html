@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{% for photo in photos %}
+<div class="photo-gallery">
+    <div class="photo">
+        <a href="">
+            <img src="{{ photo.image.url }}" alt="{{ photo.alt_text }}">
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock page_content %}

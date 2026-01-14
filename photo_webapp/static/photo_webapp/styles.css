@@ -1,0 +1,11 @@
+photo-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+img{
+    margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
