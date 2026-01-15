@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>This is the home page</h1>
+{% for photo in photos %}
+<div class="photo-gallery">
+    <div class="photo">
+        <a href="{% url 'photo_details' photo.pk %}">
+            <img src="{{ photo.image.url }}" alt="{{ photo.alt_text }}">
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock page_content %}

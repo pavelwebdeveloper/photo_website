@@ -3,16 +3,16 @@ from photo_webapp.models import Photo
 
 # Create your views here.
 
-def home(request):
+def photo_gallery(request):
     photos = Photo.objects.all()
     context = {
         "photos": photos
     }
-    return render(request, "photo_webapp/home.html", context)
+    return render(request, "photo_webapp/photo_gallery.html", context)
 
-def photo_detail(request, pk):
+def photo_details(request, pk):
     photo = Photo.objects.get(pk=pk)
     context = {
         "photo": photo
     }
-    return render(request, "photo_details.html", context)
+    return render(request, "photo_webapp/photo_details.html", context)
