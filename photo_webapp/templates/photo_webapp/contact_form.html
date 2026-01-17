@@ -1,5 +1,43 @@
-<form action="/contact_form/" method="post">
+{% extends "base.html" %}
+
+{% block title %}Contact Form{% endblock title %}
+
+{% block page_content %}
+
+<form action="/contact_form/" method="post" novalidate>
     {% csrf_token %}
-    {{ form }}
+
+    {% if form.non_field_errors %}
+        <div class="error">
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+
+    <div class="{% if form.email.errors %}has-error{% endif %}">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {% for error in form.name.errors %}
+            <br><span class="error-message">{{ error }}</span><br><br>
+        {% endfor %}
+    </div>
+
+    <div class="{% if form.email.errors %}has-error{% endif %}">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {% for error in form.email.errors %}
+            <br><span class="error-message">{{ error }}</span><br><br>
+        {% endfor %}
+    </div>
+
+    <div class="{% if form.message.errors %}has-error{% endif %}">
+        {{ form.message.label_tag }}
+        <br>
+        {{ form.message }}
+        {% for error in form.message.errors %}
+            <br><span class="error-message">{{ error }}</span><br><br>
+        {% endfor %}
+    </div>
+
     <button type="submit">Submit</button>
 </form>
+{% endblock page_content %}

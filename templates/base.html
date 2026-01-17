@@ -3,9 +3,24 @@
 <html>
     <head>
         <title>{% block title %}My Photo App{% endblock title %}</title>
-        <link rel="stylesheet" href="{% static 'photo_webapp/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'photo_webapp/css/styles.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        <header>
+            <img src="{% static 'photo_webapp/icons/camera-black-icon.svg' %}" alt="Camera icon" class="header-icon">
+            <menu>
+                <a href="{% url 'photo_gallery' %}">Gallery</a>
+                <a href="{% url 'contact_form' %}">Contact</a>
+            </menu>
+        </header>
+        <form method="get" action="{% url 'photo_gallery' %}">
+            <label for="search"></label>
+            <input type="text" name="searchFor" placeholder="Search for photos..." value="{{ request.GET.searchFor }}">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <main>
         {% block page_content %}{% endblock page_content %}
+        </main>
     </body>
 </html>

@@ -1,15 +1,31 @@
 from django.shortcuts import render, redirect
 from photo_webapp.models import Photo
 from .forms import ContactForm
+from django.db.models import Q
 
 # Create your views here.
 
 def photo_gallery(request):
+
+    query = request.GET.get("searchFor", "")
+
     photos = Photo.objects.all()
-    context = {
+
+    if query:
+        photos = photos.filter(
+            Q(image__icontains=query) |
+            Q(alt_text__icontains=query)
+        )
+
+        return render(request, "photo_webapp/photo_gallery.html", context = {
         "photos": photos
-    }
-    return render(request, "photo_webapp/photo_gallery.html", context)
+        }) 
+    else:
+        return render(request, "photo_webapp/photo_gallery.html", context = {
+        "photos": photos
+        })
+    
+    
 
 def photo_details(request, pk):
     photo = Photo.objects.get(pk=pk)
@@ -32,3 +48,6 @@ def contact_form(request):
 
 def thank_you(request):
     return render(request, "photo_webapp/thank_you.html")
+
+
+

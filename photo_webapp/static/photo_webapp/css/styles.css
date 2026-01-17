@@ -1,0 +1,53 @@
+
+:root {
+  /* colors */
+  --primary-color: #f5f5f5;
+  --secondary-color: #2b2b2b;
+  --accent1-color: #F8FF24;
+  --accent2-color: #381D2A;
+  --accent3-color: #01EC1C;
+  
+
+  /* font(s) */
+  
+
+  /*font sizes*/
+  --input-font-size: 1.1em;
+
+}
+
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ background-color: var(--accent3-color);
+}
+
+.photo-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+img{
+    margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+/* form styles */
+
+input.form-control {
+  border: 1px solid #ccc;
+}
+
+.has-error input.form-control, .has-error textarea.form-control {
+  border: 3px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+}
+
