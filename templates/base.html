@@ -10,15 +10,19 @@
         <header>
             <img src="{% static 'photo_webapp/icons/camera-black-icon.svg' %}" alt="Camera icon" class="header-icon">
             <menu>
-                <a href="{% url 'photo_gallery' %}">Gallery</a>
-                <a href="{% url 'contact_form' %}">Contact</a>
+                <a class="menu-link" href="{% url 'photo_gallery' %}">Gallery</a>
+                <a class="menu-link" href="{% url 'contact_form' %}">Contact</a>
             </menu>
+            <div id="search-form">
+                <form method="get" action="{% url 'photo_gallery' %}">
+                    <label for="search"></label>
+                    <input type="text" name="searchFor" placeholder="Search for photos..." value="{{ request.GET.searchFor }}">
+                    <button><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            
         </header>
-        <form method="get" action="{% url 'photo_gallery' %}">
-            <label for="search"></label>
-            <input type="text" name="searchFor" placeholder="Search for photos..." value="{{ request.GET.searchFor }}">
-            <button><i class="fa fa-search"></i></button>
-        </form>
+        
         <main>
         {% block page_content %}{% endblock page_content %}
         </main>

@@ -22,6 +22,27 @@ header{
   flex-wrap: wrap;
   justify-content: space-around;
  background-color: var(--accent3-color);
+ padding: 1em;
+}
+
+menu, #search-form{
+  display: flex;
+  align-items: center;
+}
+
+menu{
+  flex-wrap: wrap;
+}
+
+.menu-link{
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-gallery{
