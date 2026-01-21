@@ -12,8 +12,29 @@
   
 
   /*font sizes*/
-  --input-font-size: 1.1em;
+  --form-menu-font-size: 1.5em;
+  --button-font-size: 1em;
 
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+#logo{
+  height: 2em;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -36,7 +57,7 @@ menu{
 
 .menu-link{
   margin: 1em;
-  font-size: 1.5em;
+  font-size: var(--form-menu-font-size);
 }
 
 main{
@@ -52,12 +73,29 @@ main{
 }
 
 img{
-    margin: 5px;
-  border: 1px solid #ccc;
+  margin: 5px;
   width: 180px;
 }
 
 /* form styles */
+
+form{
+  border-radius: 0.3em;
+  background-color: #ccc;
+  padding: 2em;
+  margin: 1em;
+  font-size: var(--form-menu-font-size);
+}
+
+label{
+  display: block;
+}
+
+input[type=text],
+input[type=email]{
+  margin: 8px 0;
+  font-size: 1em;
+}
 
 input.form-control {
   border: 1px solid #ccc;
@@ -70,5 +108,21 @@ input.form-control {
 .error-message {
   color: red;
   font-size: 0.85rem;
+}
+
+button{
+  cursor: pointer;
+  font-size: var(--button-font-size);
+}
+
+button[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#search-form{
+  background-color: var(--accent3-color);
 }
 
