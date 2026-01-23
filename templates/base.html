@@ -5,6 +5,7 @@
         <title>{% block title %}My Photo App{% endblock title %}</title>
         <link rel="stylesheet" href="{% static 'photo_webapp/css/styles.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     </head>
     <body data-page="{{ request.resolver_match.url_name }}">
         <header>
@@ -23,7 +24,7 @@
             
         </header>
         
-        <main>
+        <main id="page-content">
         {% block page_content %}{% endblock page_content %}
         </main>
         <script src="{% static 'photo_webapp/javascript/menu.js' %}"></script>

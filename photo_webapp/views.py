@@ -19,11 +19,11 @@ def photo_gallery(request):
 
         return render(request, "photo_webapp/photo_gallery.html", context = {
         "photos": photos
-        }) 
+    }) 
     else:
         return render(request, "photo_webapp/photo_gallery.html", context = {
         "photos": photos
-        })
+    })
     
     
 

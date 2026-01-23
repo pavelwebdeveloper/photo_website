@@ -90,8 +90,8 @@ img{
 form{
   border-radius: 0.3em;
   background-color: #ccc;
-  padding: 2em;
-  margin: 1em;
+  padding: 1em;
+  margin: 0.5em;
   font-size: var(--form-menu-font-size);
 }
 
@@ -105,8 +105,9 @@ input[type=email]{
   font-size: 1em;
 }
 
-input.form-control {
+input.form-control, textarea.form-control{
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .has-error input.form-control, .has-error textarea.form-control {
@@ -115,7 +116,7 @@ input.form-control {
 
 .error-message {
   color: red;
-  font-size: 0.85rem;
+  font-size: 1.5rem;
 }
 
 button{
