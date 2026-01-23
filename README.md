@@ -36,7 +36,7 @@ I found these websites useful in developing this software:
 * [w3schools](https://www.w3schools.com/django/index.php)
 * [Get Started With Django: Build a Portfolio App](https://realpython.com/get-started-with-django-1/)
 * [ChatGPT](https://chatgpt.com/)
-* [Django. The web framework for perfectionists with deadlines] (https://docs.djangoproject.com/en/5.1/contents/)
+* [Django web framework for perfectionists with deadlines](https://docs.djangoproject.com/en/5.1/contents/)
 
 ## Future Work
 
