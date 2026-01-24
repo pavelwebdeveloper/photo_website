@@ -13,26 +13,35 @@
         </div>
     {% endif %}
 
+    <!--The div element with if statement that checks if name has errors-->
+    <!--If name does have errors then the class 'has-error' is added to the div element-->
     <div class="{% if form.name.errors %}has-error{% endif %}">
         {{ form.name.label_tag }}
         {{ form.name }}
         {% for error in form.name.errors %}
+        <!--Outputing the error message to a user-->
             <br><span class="error-message">{{ error }}</span><br>
         {% endfor %}
     </div>
 
+    <!--The div element with if statement that checks if email has errors-->
+    <!--If email does have errors then the class 'has-error' is added to the div element-->
     <div class="{% if form.email.errors %}has-error{% endif %}">
         {{ form.email.label_tag }}
         {{ form.email }}
         {% for error in form.email.errors %}
+        <!--Outputing the error message to a user-->
             <br><span class="error-message">{{ error }}</span><br>
         {% endfor %}
     </div>
 
+    <!--The div element with if statement that checks if message has errors-->
+    <!--If message does have errors then the class 'has-error' is added to the div element-->
     <div class="{% if form.message.errors %}has-error{% endif %}">
         {{ form.message.label_tag }}
         {{ form.message }}
         {% for error in form.message.errors %}
+        <!--Outputing the error message to a user-->
             <br><span class="error-message">{{ error }}</span><br>
         {% endfor %}
     </div>

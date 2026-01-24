@@ -1,5 +1,9 @@
+/**
+ * Getting information about which page is active
+ */
 const page = document.body.dataset.page;
 
+/* Code that makes menu links to change background color depeneding on the current page */
 if(page === 'photo_gallery'){
     if(!document.getElementById("photo_gallery_menu_link").classList.contains('active')){
         document.getElementById("photo_gallery_menu_link").classList.add('active');
